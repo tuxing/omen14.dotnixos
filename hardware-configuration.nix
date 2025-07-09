@@ -23,7 +23,18 @@
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
-
+  
+  fileSystems."/mnt/crustore" =
+    { device = "/dev/disk/by-uuid/EEB48E3CB48E06F5";
+      fsType = "ntfs";
+      options = [ "nofail" ];
+    };
+    
+  fileSystems."/mnt/intstore" =
+    { device = "/dev/disk/by-uuid/A8F2AD05F2ACD938";
+      fsType = "ntfs";
+      options = [ "nofail" ];
+    };
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
